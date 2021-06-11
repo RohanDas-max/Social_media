@@ -10,7 +10,7 @@ import {
 import { VscAccount } from "react-icons/vsc";
 import PersonIcon from "@material-ui/icons/Person";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import SearchIcon from '@material-ui/icons/Search';
+import SearchIcon from "@material-ui/icons/Search";
 import MailOutlineTwoToneIcon from "@material-ui/icons/MailOutlineTwoTone";
 import Sidebar from "./Sidebar";
 import useStyle from "./styles";
@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <div>
       <CssBaseline />
-      <AppBar position="static" color="primary">
+      <AppBar position="static">
         <Toolbar>
           <Sidebar className={classes.Sidebar} />
           <VscAccount className={classes.icon} />
@@ -30,19 +30,28 @@ export default function Navbar() {
           </Typography>
 
           {/* Search Input */}
-          <div className={classes.searchBar}> 
-            <Input disableUnderline={true} fullWidth="true" className={classes.SearchInput}/>
+          <div className={classes.searchBar}>
+            <Input
+              disableUnderline={true}
+              fullWidth="true"
+              className={classes.SearchInput}
+              placeholder="Search people and posts"
+            />
+           
+
             {/* <SearchIcon color="primary" fontSize="small" className={classes.Searchicon}/> */}
+          
+          
           </div>
 
           <Button>
-            <MailOutlineTwoToneIcon />
+            <MailOutlineTwoToneIcon color="inherit" />
           </Button>
           <Button>
-            <NotificationsIcon />
+            <NotificationsIcon color="inherit" />
           </Button>
           <Button>
-            <PersonIcon />
+            <PersonIcon color="inherit" />
           </Button>
         </Toolbar>
       </AppBar>

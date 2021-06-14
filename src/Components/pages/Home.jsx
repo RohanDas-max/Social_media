@@ -8,7 +8,7 @@ import {
   TextField,
   Button,
 } from "@material-ui/core";
-// import AttachmentIcon from '@material-ui/icons/Attachment';
+import AttachmentIcon from "@material-ui/icons/Attachment";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import useStyle from "./styles";
 
@@ -19,40 +19,36 @@ export default function Home() {
 
   return (
     <main className={classes.main}>
-      {/* post */}
       <Container className={classes.container} maxWidth="sm">
-        <Grid container spacing={1} className={classes.cardGrid}>
-          <Card
-            style={{
-              width: "580px",
-            }}
-          >
-            <CardContent
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <TextField
-                variant="outlined"
-                color="primary"
-                multiline="true"
-                rowsMax="30"
-              />
-              <TextField type="file" variant="standard" />
-              <Button variant="contained" color="secondary">
-                post
-              </Button>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Container>
+        <Grid container spacing={2} className={classes.cardGrid}>
+          {/* post */}
+          <Grid item xs={11} md={12}>
+            <Card className={classes.card}>
+              <CardContent
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <TextField
+                  variant="outlined"
+                  color="primary"
+                  multiline={true}
+                  rowsMax="30"
+                />
 
-      {/* feed */}
-      <Container className={classes.container} maxWidth="sm">
-        <Grid container spacing={1} className={classes.cardGrid}>
+                <TextField type="file" />
+
+                <Button variant="contained" color="primary">
+                  post
+                </Button>
+              </CardContent>
+            </Card>
+          </Grid>
+
+          {/* feed */}
           {cards.map((card) => (
-            <Grid item key={card} xs={12}>
+            <Grid item key={card} xs={11} md={12}>
               <Card className={classes.card}>
                 <CardContent>
                   <Typography variant="h8">caption here</Typography>

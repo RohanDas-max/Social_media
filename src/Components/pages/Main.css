@@ -1,0 +1,32 @@
+.root {
+  background-color: #282c34;
+  min-height: 100vh;
+  color:blanchedalmond;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 0.2fr auto;
+  min-height: 100vh;
+}
+
+.navbar {
+  grid-column: 1/4;
+  grid-row: 1/2;
+}
+
+.feed {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.leftbar {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.rightbar {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}

@@ -5,14 +5,14 @@ import {
   Toolbar,
   Typography,
   Button,
-  Input,
+  ButtonGroup,
+  InputBase,
 } from "@material-ui/core";
 import { VscAccount } from "react-icons/vsc";
 import PersonIcon from "@material-ui/icons/Person";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import SearchIcon from "@material-ui/icons/Search";
 import MailOutlineTwoToneIcon from "@material-ui/icons/MailOutlineTwoTone";
-import Sidebar from "./Sidebar";
+import SearchIcon from "@material-ui/icons/Search";
 import useStyle from "./styles";
 
 export default function Navbar() {
@@ -21,38 +21,48 @@ export default function Navbar() {
   return (
     <div>
       <CssBaseline />
-      <AppBar position="static">
+      <AppBar position="static" className={classes.root}>
         <Toolbar>
-          <Sidebar className={classes.Sidebar} />
           <VscAccount className={classes.icon} />
-          <Typography variant="h5" className={classes.title}>
-            Social App
+          <Typography
+            variant="h6"
+            color="initial"
+            noWrap={false}
+            className={classes.root}
+          >
+            Social
           </Typography>
 
           {/* Search Input */}
           <div className={classes.searchBar}>
-            <Input
-              disableUnderline={true}
-              fullWidth="true"
-              className={classes.SearchInput}
-              placeholder="Search people and posts"
+            <div className={classes.SearchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="search.."
+              inputProps={{ "aria-label": "search" }}
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
             />
-           
-
-            {/* <SearchIcon color="primary" fontSize="small" className={classes.Searchicon}/> */}
-          
-          
           </div>
 
-          <Button>
-            <MailOutlineTwoToneIcon color="inherit" />
-          </Button>
-          <Button>
-            <NotificationsIcon color="inherit" />
-          </Button>
-          <Button>
-            <PersonIcon color="inherit" />
-          </Button>
+          <ButtonGroup
+            size="small"
+            variant="text"
+            className={classes.ButtonGroup}
+          >
+            <Button>
+              <MailOutlineTwoToneIcon color="inherit" />
+            </Button>
+            <Button>
+              <NotificationsIcon color="inherit" />
+            </Button>
+            <Button>
+              <PersonIcon color="inherit" />
+            </Button>
+          </ButtonGroup>
         </Toolbar>
       </AppBar>
     </div>

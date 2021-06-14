@@ -52,9 +52,7 @@ const useStyle = makeStyles((theme) => ({
   home: {
     textAlign: "center",
   },
-  main: {
-    marginTop: 0,
-  },
+ 
   container: {
     marginTop: "10px",
     padding: "2px",

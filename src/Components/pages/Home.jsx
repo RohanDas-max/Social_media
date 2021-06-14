@@ -8,7 +8,6 @@ import {
   TextField,
   Button,
 } from "@material-ui/core";
-import AttachmentIcon from "@material-ui/icons/Attachment";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import useStyle from "./styles";
 
@@ -18,7 +17,7 @@ export default function Home() {
   const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
   return (
-    <main className={classes.main}>
+    <main >
       <Container className={classes.container} maxWidth="sm">
         <Grid container spacing={2} className={classes.cardGrid}>
           {/* post */}

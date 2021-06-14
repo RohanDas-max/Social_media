@@ -1,6 +1,6 @@
 .root {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height:fit-content;
   color:blanchedalmond;
 }
 
@@ -19,6 +19,9 @@
 .feed {
   grid-column: 2/3;
   grid-row: 2/3;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh; 
 }
 
 .leftbar {
@@ -29,4 +32,18 @@
 .rightbar {
   grid-column: 3/4;
   grid-row: 2/3;
+}
+
+
+.feed::-webkit-scrollbar {
+  width: 5px;
+}
+.feed::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.feed::-webkit-scrollbar-thumb {
+background-color: rgb(70, 148, 34);
+outline: 1px solid rgb(49, 61, 73);
 }

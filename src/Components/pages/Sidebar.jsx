@@ -6,15 +6,22 @@ import { ListItem } from "@material-ui/core";
 
 export default function Sidebar() {
   return (
-    <div>
+    <div style={{
+      display:"flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "space-evenly",
+      marginTop: "70px",
+      marginLeft: "-70px"
+  }}>
       <List>
         <ListItem>
           <HistoryOutlinedIcon color="error" fontSize="large" />
-          <Typography variant="h5">History</Typography>
+          <Typography variant="caption">History</Typography>
         </ListItem>
         <ListItem>
           <EventNoteOutlinedIcon color="error" fontSize="large" />
-          <Typography variant="h5">Events</Typography>
+          <Typography variant="caption">Events</Typography>
         </ListItem>
       </List>
     </div>

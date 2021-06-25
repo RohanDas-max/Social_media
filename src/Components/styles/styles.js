@@ -2,9 +2,25 @@ import { fade, makeStyles } from "@material-ui/core";
 import { deepOrange } from "@material-ui/core/colors";
 
 const useStyle = makeStyles((theme) => ({
+  
+  spacing:{ 
+   dispaly: "flex",
+   justifyContent: "center",
+   alignItems: "center"
+  },
   root: {
     flexGrow: 1,
   },
+  badge:{
+    alignItems: "center" ,
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+    
+  },
+icon:{
+  margin: theme.spacing(1),
+},
 
   searchBar: {
     position: "relative",
@@ -13,6 +29,7 @@ const useStyle = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
+    marginRight: theme.spacing(1) ,
     marginLeft: 0,
     width: "100%",
     [theme.breakpoints.up("sm")]: {
@@ -39,47 +56,12 @@ const useStyle = makeStyles((theme) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
     width: "100%",
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       width: "12ch",
       "&:focus": {
         width: "20ch",
       },
     },
-  },
-
-  ButtonGroup: {},
-
-  home: {
-    textAlign: "center",
-  },
- 
-  container: {
-    marginTop: "10px",
-    padding: "2px",
-  },
-  cardGrid: {
-    padding: "10px 0",
-    margin: "0px",
-  },
-
-  card: {
-    padding: "10px",
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-  },
-  CardMedia: {
-    paddingTop: "56.25%", //16:9
-  },
-
-  large: {
-    width: theme.spacing(7),
-    height: theme.spacing(7),
-  },
-
-  orange: {
-    color: theme.palette.getContrastText(deepOrange[500]),
-    backgroundColor: deepOrange[500],
   },
 }));
 

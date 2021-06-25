@@ -7,13 +7,15 @@ import {
   Button,
   ButtonGroup,
   InputBase,
+  Badge,
 } from "@material-ui/core";
-import { VscAccount } from "react-icons/vsc";
+
+import { IoPeopleCircleOutline } from "react-icons/io5";
 import PersonIcon from "@material-ui/icons/Person";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MailOutlineTwoToneIcon from "@material-ui/icons/MailOutlineTwoTone";
 import SearchIcon from "@material-ui/icons/Search";
-import useStyle from "./styles";
+import useStyle from "./styles/styles";
 
 export default function Navbar() {
   const classes = useStyle();
@@ -21,24 +23,47 @@ export default function Navbar() {
   return (
     <div>
       <CssBaseline />
-      <AppBar position="static" className={classes.root}>
-        <Toolbar>
-          <VscAccount className={classes.icon} />
+      <AppBar >
+        <Toolbar className={classes.spacing}>
+          <IoPeopleCircleOutline size="3em" className={classes.icon} />
           <Typography
-            variant="h6"
+          style={{
+            marginRight: "10px"
+          }}
+            variant="h5"
             color="initial"
-            noWrap={false}
-            className={classes.root}
+            noWrap
           >
             Social
           </Typography>
 
-          {/* Search Input */}
+          <div className={classes.badge}>
+            <ButtonGroup size="large" variant="outlined">
+              <Button size="small">
+                <Badge badgeContent={4} color="secondary">
+                  <MailOutlineTwoToneIcon color="inherit" />
+                </Badge>
+              </Button>
+
+              <Button size="small">
+                <Badge badgeContent={4} color="secondary">
+                  <NotificationsIcon color="inherit" />
+                </Badge>
+              </Button>
+
+              <Button size="small">
+                <PersonIcon color="inherit" />
+              </Button>
+            </ButtonGroup>
+          </div>
+
+          {/* Search */}
           <div className={classes.searchBar}>
             <div className={classes.SearchIcon}>
               <SearchIcon />
             </div>
             <InputBase
+              margin="dense"
               placeholder="search.."
               inputProps={{ "aria-label": "search" }}
               classes={{
@@ -47,22 +72,6 @@ export default function Navbar() {
               }}
             />
           </div>
-
-          <ButtonGroup
-            size="small"
-            variant="text"
-            className={classes.ButtonGroup}
-          >
-            <Button>
-              <MailOutlineTwoToneIcon color="inherit" />
-            </Button>
-            <Button>
-              <NotificationsIcon color="inherit" />
-            </Button>
-            <Button>
-              <PersonIcon color="inherit" />
-            </Button>
-          </ButtonGroup>
         </Toolbar>
       </AppBar>
     </div>

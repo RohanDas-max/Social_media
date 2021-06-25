@@ -1,5 +1,5 @@
 import {
-  Avatar,
+ 
   Button,
   Card,
   CardContent,
@@ -35,7 +35,7 @@ export default function Profile() {
         </div>
       </main>
 
-      <Container maxWidth="sm" className={classes.root} maxWidth="md">
+      <Container maxWidth="sm" className={classes.root} >
         <CssBaseline />
         <Grid>
           <Grid items>
